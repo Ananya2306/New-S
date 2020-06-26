@@ -18,7 +18,7 @@ class Player {
     updateCount(count){
         //refers to the total database
         database.ref("/").update({
-            //count is no. of players(in the arguments)
+            //count is no. of players (in the arguments)
             playerCount: count
         })
     }
@@ -28,7 +28,7 @@ class Player {
         var playerIndex = "players/player" + this.index;
         //referring to db and creates entry 'players'
         database.ref(playerIndex).set({
-            //setting the name and distance in db
+            //setting the name , distance , school , class , age  in database
             name: this.name,
             distance: this.distance,
             school:this.school,
