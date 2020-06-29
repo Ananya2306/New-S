@@ -8,26 +8,31 @@ class Form {
         this.enter5 = createElement("h3","Enter Your E-mail Address");
         
         // write Questions to Ask
+        // Question 1 
         this.que1 = createElement('h4'," ~> Do you think that your school has to be sanitized regularly ? ");
         this.opt1 = createButton("- Yes -");
         this.opt2 = createButton("- Maybe -");
         this.opt3 = createButton("- No -");
-
+            
+        // Question 2
         this.que2 = createElement('h4'," ~> Do you think that your school should give Hand Sanitizer to all students (FREE) ?");
         this.opt4 = createButton("- Yes -");
         this.opt5 = createButton("- Maybe -");
         this.opt6 = createButton("- No -");
 
+        // Question 3 
         this.que3 = createElement('h4'," ~> Do you think that your school has to provide Picnic for students this Year(2020) ?");
         this.opt7 = createButton("- Yes -");
         this.opt8 = createButton("- Maybe -");
         this.opt9 = createButton("- No -");
 
+        // Question 4
         this.que4 = createElement('h4'," ~> Do you think that your school should give Masks to all students (FREE) ?");
         this.opt10 = createButton("- Yes -");
         this.opt11 = createButton("- Maybe -");
         this.opt12 = createButton("- No -");
         
+        // Question 5 
         this.que5 = createElement('h4'," ~> Do you think that your school should give Gloves to all students (FREE) ?");
         this.opt13 = createButton("- Yes -");
         this.opt14 = createButton("- Maybe -");
@@ -39,6 +44,7 @@ class Form {
         this.class = createInput();
         this.school = createInput();
         this.input = createInput();
+        
         // Create Button submit button and reset button
         this.button = createButton(" ~ ~ SUBMIT  ~ ~ ");
         this.reset = createButton(" ~ ~ RESET ~ ~ ");
@@ -95,7 +101,8 @@ class Form {
         title.html("Survey ~ COVID-19");//Give title 
         title.position(570,-20);//Give position to the title
         
-        //Give position to all elements , questions and inputs + Button (Submit and Reset)
+        //Give position to all elements , questions (1,2,3,4,5) and inputs + Button (Submit and Reset)
+   
         this.que1.position(30,150);
         this.opt1.position(50,200);
         this.opt2.position(110,200);
@@ -140,7 +147,7 @@ class Form {
         this.reset.position(1200,500);
        
         //Make mouse preesed function 
-        //It Hide the elements and inputs when you press the Button
+        //It Hide the elements , questions and inputs when you press the Button
         this.button.mousePressed(()=>{
             
             this.que1.hide();
@@ -180,6 +187,7 @@ class Form {
             this.email.hide();
             this.button.hide();
             this.reset.hide();
+            
             //Give information to player.js about the inputs 
             player.options = this.opt1.value();
             player.email = this.email.value();
@@ -197,8 +205,10 @@ class Form {
             // It display when then you pressed the button 
            this.greeting.html("Welcome " + player.name);
            this.greeting.position(530,160);//Give position to the Greeting
+            
         });
-
+    
+        // Make reset function to see what will happen when reset button pressed
         this.reset.mousePressed(()=>{
             player.updateCount(0);
             game.update(0);
