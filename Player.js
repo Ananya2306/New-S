@@ -1,8 +1,12 @@
 class Player {
     constructor(){
         this.index = null;
-        this.distance = 0;
+       // this.distance = 0;
         this.name = null;
+        this.class = null;
+        this.email = null;
+        this.age = null;
+        this.school = null;
     }
 
     getCount(){
@@ -30,9 +34,11 @@ class Player {
         database.ref(playerIndex).set({
             //setting the name , distance , school , class , age  in database
             name: this.name,
-            distance: this.distance,
+           // distance: this.distance,
             school:this.school,
-            classAge: this.class
+            class: this.class,
+            age : this.age,
+            email : this.email
         })
     }
 

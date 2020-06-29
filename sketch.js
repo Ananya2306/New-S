@@ -18,6 +18,10 @@ function setup(){
 }
 
 function draw(){
+    background("lightblue");
+    strokeWeight(20);
+    stroke(0);
+    line(0,150,1400,150);
     // for updating the game on Play state
     if(playerCount === 2){
         game.update(1);
