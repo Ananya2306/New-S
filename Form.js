@@ -203,7 +203,7 @@ class Form {
             player.updateCount(playerCount);
             //Give greeting 
             // It display when then you pressed the button 
-           this.greeting.html("Welcome " + player.name);
+           this.greeting.html("Thank You so much " + player.name + " For trying my survey");
            this.greeting.position(530,160);//Give position to the Greeting
             
         });
