@@ -7,6 +7,7 @@ class Player {
         this.email = null;
         this.age = null;
         this.school = null;
+       // this.opt = "Yes";
     }
 
     getCount(){
@@ -19,12 +20,26 @@ class Player {
         })
     }
 
+    getYCount(){
+        var YCountRef = database.ref("Que1YesCount");
+        YCountRef.on("value",function(data){
+            Que1YesCount = data.val();
+        })
+    }
+
     updateCount(count){
         //refers to the total database
         database.ref("/").update({
             //count is no. of players (in the arguments)
             playerCount: count
         })
+    }
+
+    updateYCount(count1){
+        database.ref("/").update({
+            Que1YesCount : count1
+        })
+
     }
 
     update(){
@@ -38,7 +53,8 @@ class Player {
             school:this.school,
             class: this.class,
             age : this.age,
-            email : this.email
+            email : this.email,
+          //  answer : this.opt1
         })
     }
 

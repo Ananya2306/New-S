@@ -11,10 +11,10 @@ class Form {
         // Question 1 
         this.que1 = createElement('h4'," ~> Do you think that your school has to be sanitized regularly ? ");
         this.opt1 = createButton("- Yes -");
-        this.opt2 = createButton("- Maybe -");
+      //  this.opt2 = createButton("- Maybe -");
         this.opt3 = createButton("- No -");
             
-        // Question 2
+      /*  // Question 2
         this.que2 = createElement('h4'," ~> Do you think that your school should give Hand Sanitizer to all students (FREE) ?");
         this.opt4 = createButton("- Yes -");
         this.opt5 = createButton("- Maybe -");
@@ -37,7 +37,7 @@ class Form {
         this.opt13 = createButton("- Yes -");
         this.opt14 = createButton("- Maybe -");
         this.opt15 = createButton("- No -");
-
+*/
         //Create Inputs 
         this.email = createInput();
         this.age = createInput();
@@ -57,9 +57,9 @@ class Form {
         // Hide them
         this.que1.hide();
         this.opt1.hide();
-        this.opt2.hide();
+      //  this.opt2.hide();
         this.opt3.hide();
-
+/*
         this.que2.hide();
         this.opt4.hide();
         this.opt5.hide();
@@ -78,7 +78,7 @@ class Form {
         this.que5.hide();
         this.opt13.hide();
         this.opt14.hide();
-        this.opt15.hide();
+        this.opt15.hide();*/
 
         this.email.hide();
         this.age.hide();
@@ -105,10 +105,10 @@ class Form {
    
         this.que1.position(30,150);
         this.opt1.position(50,200);
-        this.opt2.position(110,200);
+       // this.opt2.position(110,200);
         this.opt3.position(190,200);
         
-        this.que2.position(30,224);
+      /*  this.que2.position(30,224);
         this.opt4.position(50,274);
         this.opt5.position(110,274);
         this.opt6.position(190,274);
@@ -127,7 +127,7 @@ class Form {
         this.opt13.position(50,500);
         this.opt14.position(110,500);
         this.opt15.position(190,500);
-        
+        */
         this.enter1.position(100,50);
         this.input.position(100,100);
 
@@ -152,10 +152,10 @@ class Form {
             
             this.que1.hide();
             this.opt1.hide();
-            this.opt2.hide();
+           // this.opt2.hide();
             this.opt3.hide();
 
-            this.que2.hide();
+            /*this.que2.hide();
             this.opt4.hide();
             this.opt5.hide();
             this.opt6.hide();
@@ -173,7 +173,7 @@ class Form {
             this.que5.hide();
             this.opt13.hide();
             this.opt14.hide();
-            this.opt15.hide();
+            this.opt15.hide();*/
 
             this.enter1.hide();
             this.enter2.hide();
@@ -195,23 +195,32 @@ class Form {
             player.school = this.school.value();
             player.name = this.input.value();
             player.class = this.class.value();
+
             playerCount+=1;
             player.index = playerCount;
             
             //Update the player and playerCount
             player.update();
             player.updateCount(playerCount);
-            //Give greeting 
-            // It display when then you pressed the button 
-           this.greeting.html("Thank You so much " + player.name + " For trying my survey");
-           this.greeting.position(530,160);//Give position to the Greeting
+            player.updateYCount();
             
+                //Give greeting 
+            // It display when then you pressed the button 
+            this.greeting.html("Thank You so much " + player.name + " For trying my survey");
+            this.greeting.position(530,160);//Give position to the Greeting
+             
+
         });
-    
+
+         this.opt1.mousePressed(()=>{
+        Que1YesCount+=1;
+            player.updateYCount(Que1YesCount);
+             });
         // Make reset function to see what will happen when reset button pressed
         this.reset.mousePressed(()=>{
             player.updateCount(0);
             game.update(0);
           });
     }
+
 }

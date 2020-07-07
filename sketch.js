@@ -2,6 +2,7 @@
 var canvas;
 var gameState = 0;
 var playerCount;
+var Que1YesCount;
 var database;
 var form, player, game;
 var allPlayers;
@@ -22,13 +23,10 @@ function draw(){
     strokeWeight(20);
     stroke(0);
     line(0,150,1400,150);
+
     // for updating the game on Play state
-    if(playerCount === 2){
+    if(playerCount === 1){
         game.update(1);
     }
-// Game state play 
-    if(gameState===1){
-        clear();
-        game.play();
-    }
+
 }
