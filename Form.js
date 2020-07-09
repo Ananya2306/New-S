@@ -11,33 +11,28 @@ class Form {
         // Question 1 
         this.que1 = createElement('h4'," ~> Do you think that your school has to be sanitized regularly ? ");
         this.opt1 = createButton("- Yes -");
-      //  this.opt2 = createButton("- Maybe -");
-        this.opt3 = createButton("- No -");
+        this.opt2 = createButton("- No -");
             
-      /*  // Question 2
+       // Question 2
         this.que2 = createElement('h4'," ~> Do you think that your school should give Hand Sanitizer to all students (FREE) ?");
-        this.opt4 = createButton("- Yes -");
-        this.opt5 = createButton("- Maybe -");
-        this.opt6 = createButton("- No -");
+        this.opt3 = createButton("- Yes -");
+        this.opt4 = createButton("- No -");
 
         // Question 3 
         this.que3 = createElement('h4'," ~> Do you think that your school has to provide Picnic for students this Year(2020) ?");
-        this.opt7 = createButton("- Yes -");
-        this.opt8 = createButton("- Maybe -");
-        this.opt9 = createButton("- No -");
+        this.opt5 = createButton("- Yes -");
+        this.opt6 = createButton("- No -");
 
-        // Question 4
+       // Question 4
         this.que4 = createElement('h4'," ~> Do you think that your school should give Masks to all students (FREE) ?");
-        this.opt10 = createButton("- Yes -");
-        this.opt11 = createButton("- Maybe -");
-        this.opt12 = createButton("- No -");
+        this.opt7 = createButton("- Yes -");
+        this.opt8 = createButton("- No -");
         
         // Question 5 
         this.que5 = createElement('h4'," ~> Do you think that your school should give Gloves to all students (FREE) ?");
-        this.opt13 = createButton("- Yes -");
-        this.opt14 = createButton("- Maybe -");
-        this.opt15 = createButton("- No -");
-*/
+        this.opt9 = createButton("- Yes -");
+        this.opt10 = createButton("- No -");
+
         //Create Inputs 
         this.email = createInput();
         this.age = createInput();
@@ -57,28 +52,23 @@ class Form {
         // Hide them
         this.que1.hide();
         this.opt1.hide();
-      //  this.opt2.hide();
-        this.opt3.hide();
-/*
+        this.opt2.hide();
+
         this.que2.hide();
+        this.opt3.hide();
         this.opt4.hide();
+
+        this.que3.hide();
         this.opt5.hide();
         this.opt6.hide();
 
-        this.que3.hide();
+        this.que4.hide();
         this.opt7.hide();
         this.opt8.hide();
-        this.opt9.hide();
-
-        this.que4.hide();
-        this.opt10.hide();
-        this.opt11.hide();
-        this.opt12.hide();
 
         this.que5.hide();
-        this.opt13.hide();
-        this.opt14.hide();
-        this.opt15.hide();*/
+        this.opt9.hide();
+        this.opt10.hide();
 
         this.email.hide();
         this.age.hide();
@@ -102,32 +92,10 @@ class Form {
         title.position(570,-20);//Give position to the title
         
         //Give position to all elements , questions (1,2,3,4,5) and inputs + Button (Submit and Reset)
-   
         this.que1.position(30,150);
         this.opt1.position(50,200);
-       // this.opt2.position(110,200);
-        this.opt3.position(190,200);
+        this.opt2.position(110,200);
         
-      /*  this.que2.position(30,224);
-        this.opt4.position(50,274);
-        this.opt5.position(110,274);
-        this.opt6.position(190,274);
-
-        this.que3.position(30,300);
-        this.opt7.position(50,350);
-        this.opt8.position(110,350);
-        this.opt9.position(190,350);
-
-        this.que4.position(30,370);
-        this.opt10.position(50,424);
-        this.opt11.position(110,424);
-        this.opt12.position(190,424);
-
-        this.que5.position(30,450);
-        this.opt13.position(50,500);
-        this.opt14.position(110,500);
-        this.opt15.position(190,500);
-        */
         this.enter1.position(100,50);
         this.input.position(100,100);
 
@@ -145,35 +113,73 @@ class Form {
        
         this.button.position(1200,550);
         this.reset.position(1200,500);
-       
-        //Make mouse preesed function 
-        //It Hide the elements , questions and inputs when you press the Button
+
+        this.opt1.mousePressed(()=>{
+        Que1YesCount+=1;
+        player.updateYCount(Que1YesCount);
+
+        this.que2.position(30,224);
+        this.opt3.position(50,274);
+        this.opt4.position(110,274);
+
+            });
+
+        this.opt3.mousePressed(()=>{
+        Que1YesCount+=1;
+        player.updateYCount(Que1YesCount);
+
+        this.que3.position(30,300);
+        this.opt5.position(50,350);
+        this.opt6.position(110,350);
+        });
+
+        this.opt5.mousePressed(()=>{
+            Que1YesCount+=1;
+        player.updateYCount(Que1YesCount);
+
+        this.que4.position(30,370);
+        this.opt7.position(50,424);
+        this.opt8.position(110,424);
+        });
+
+        this.opt7.mousePressed(()=>{
+        Que1YesCount+=1;
+        player.updateYCount(Que1YesCount);
+
+        this.que5.position(30,450);
+        this.opt9.position(50,500);
+        this.opt10.position(110,500);
+        });
+
+        this.opt9.mousePressed(()=>{
+            Que1YesCount+=1;
+            player.updateYCount(Que1YesCount);
+
+            this.greeting.html("~ ~ ~ ~ ~ You Are Safe ~ ~ ~ ~ ~");
+            this.greeting.position(displayWidth/2,displayHeight/2);
+        });
+
         this.button.mousePressed(()=>{
             
             this.que1.hide();
             this.opt1.hide();
-           // this.opt2.hide();
-            this.opt3.hide();
+            this.opt2.hide();
 
-            /*this.que2.hide();
+            this.que2.hide();
+            this.opt3.hide();
             this.opt4.hide();
+
+            this.que3.hide();
             this.opt5.hide();
             this.opt6.hide();
 
-            this.que3.hide();
+            this.que4.hide();
             this.opt7.hide();
             this.opt8.hide();
-            this.opt9.hide();
-
-            this.que4.hide();
-            this.opt10.hide();
-            this.opt11.hide();
-            this.opt12.hide();
 
             this.que5.hide();
-            this.opt13.hide();
-            this.opt14.hide();
-            this.opt15.hide();*/
+            this.opt9.hide();
+            this.opt10.hide();
 
             this.enter1.hide();
             this.enter2.hide();
@@ -204,18 +210,9 @@ class Form {
             player.updateCount(playerCount);
             player.updateYCount();
             
-                //Give greeting 
-            // It display when then you pressed the button 
-            this.greeting.html("Thank You so much " + player.name + " For trying my survey");
-            this.greeting.position(530,160);//Give position to the Greeting
-             
-
+            
         });
 
-         this.opt1.mousePressed(()=>{
-        Que1YesCount+=1;
-            player.updateYCount(Que1YesCount);
-             });
         // Make reset function to see what will happen when reset button pressed
         this.reset.mousePressed(()=>{
             player.updateCount(0);
